@@ -2,7 +2,7 @@ import os
 import sys
 import psutil
 
-from PyQt5.QtWidgets import QWidget, QMainWindow, QMessageBox
+from PyQt6.QtWidgets import QWidget, QMainWindow, QMessageBox
 from main_ui import *
 from monitor_widget_ui import Ui_Form as MonitorConfigWidgetUI
 

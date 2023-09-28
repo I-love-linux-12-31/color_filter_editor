@@ -1,10 +1,9 @@
 from dependencies_checker import check_dependencies
+
 check_dependencies()
 
 import sys
-import PyQt5
-from PyQt5.Qt import QApplication
-from PyQt5.QtWidgets import QWidget, QLabel
+from PyQt6.QtWidgets import QWidget, QLabel, QApplication
 
 from windows import MainWindow, MonitorConfigWidget
 
@@ -27,8 +26,11 @@ def main():
     else:
         main_window.label_mem.setText("RAM : " + str(sys_info.get_total_ram_size_in_mb) + " MB")
 
-    main_window.label_gpu.setText("GPUS:\n" + "\n".join(sys_info.get_gpus_names()))
-    main_window.label_cpu.setText("CPUS:\n" + "\n".join(sys_info.get_cpus_names()))
+    if not sys_info.get_gpus_names():
+        main_window.label_gpu.setText("GPUS: NO")
+    else:
+        main_window.label_gpu.setText("GPUS:\n" + "\n".join(sys_info.get_gpus_names()))
+    main_window.label_cpu.setText("CPU:\n" + "\n".join(sys_info.get_cpus_names()))
 
     for interface in pc_info["active_ports"]:
         main_window.tabWidget.addTab(MonitorConfigWidget(interface, pc_info["screen_modes"]), interface)
