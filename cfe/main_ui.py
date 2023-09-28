@@ -1,4 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
+from debug_imgs_widget import DebugImagesWindow
 
 
 class Ui_MainWindow(object):
@@ -72,6 +73,12 @@ class Ui_MainWindow(object):
         # self.label_sys.setObjectName("label_sys")
         # self.verticalLayout.addWidget(self.label_sys)
 
+        self.debug_images_widget = DebugImagesWindow()
+
+        self.debug_images_widget_button = QtWidgets.QPushButton(self.sys_info)
+        self.debug_images_widget_button.setText("Show debug image")
+        self.debug_images_widget_button.clicked.connect(lambda: self.debug_images_widget.show())
+        self.verticalLayout.addWidget(self.debug_images_widget_button)
 
 
         self.retranslateUi(MainWindow)
