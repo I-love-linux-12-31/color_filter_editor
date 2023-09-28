@@ -18,7 +18,7 @@
 * python3
 
 А также python библиотеки:
-* PyQt5
+* PyQt6
 * psutil
 
 Запуск через bash скрипт run_cfe.sh
