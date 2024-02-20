@@ -1,24 +1,32 @@
-# Простая программа для настройки коррекции цвета в X11
+# A simple program for setting up color correction in X11
 
-Данная программа позволяет изменить яркость дисплея и интенсивность отдельных цветов
-в системах с графическим сервером X11 для каждого видео-выхода отдельно.
+[RU] README_RU.md<br>
+[EN] README.md
 
-### ! Wayland не поддерживается !
+This program allows to change the brightness of the display and the intensity of individual colors
+in systems with the X11 graphics server for each video output separately.
 
-Исходный код:
+### ! Wayland not supported !
+
+Source code repos:
 1. https://bitbucket.org/i-love-linux-12-31/colorfiltereditor/
 2. https://github.com/I-love-linux-12-31/color_filter_editor
 
 
-## Зависимости:
-Для работы программы в вашей системе должны быть установленны следующие утилиты:
-* cat
+## Dependencies:
+The following utilities must be installed on your system for the program to work correctly:
+* bash
 * lspci
 * xrandr
 * python3
 
-А также python библиотеки:
+Python libraries:
 * PyQt6
 * psutil
 
-Запуск через bash скрипт run_cfe.sh
+## Launching app:
+<pre>$ ./run_cfe.sh</pre>
+
+## Installing app:
+<pre># ./install.sh</pre> or <pre>$ sudo ./install.sh</pre>
+
