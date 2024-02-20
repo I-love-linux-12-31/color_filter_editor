@@ -47,7 +47,7 @@ class MonitorConfigWidget(QWidget, MonitorConfigWidgetUI):
         print(command)
         if sum(gamma) / 3 < 0.3 or sum(gamma) / 3 > 1.6 or brightness < 0.2:
             if QMessageBox.warning(
-                    None, "Вы уверенны?", "Вы уверенны?", QMessageBox.Cancel | QMessageBox.Ok
+                    None, "Are you sure?", "Are you sure?", QMessageBox.Cancel | QMessageBox.Ok
             ) == QMessageBox.Cancel:
                 print("Canceled.")
                 return
