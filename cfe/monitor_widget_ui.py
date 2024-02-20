@@ -77,9 +77,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.pushButton.setText(_translate("Form", "Применить"))
-        self.label_3.setText(_translate("Form", "Разрешение /  Частота:"))
-        self.label_4.setText(_translate("Form", "Гамма R / G / B :"))
-        self.label_5.setText(_translate("Form", "Яркость :"))
-        self.label_2.setText(_translate("Form", "Устройство :"))
+        self.pushButton.setText(_translate("Form", "Apply"))
+        self.label_3.setText(_translate("Form", "Screen Resolution /  Frequency:"))
+        self.label_4.setText(_translate("Form", "Colors R / G / B :"))
+        self.label_5.setText(_translate("Form", "Brightness :"))
+        self.label_2.setText(_translate("Form", "Output :"))
         self.label.setText(_translate("Form", "*device*"))
