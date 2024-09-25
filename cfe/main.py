@@ -1,4 +1,5 @@
 from dependencies_checker import check_dependencies
+from PyQt6 import QtCore
 
 check_dependencies()
 
@@ -29,7 +30,13 @@ def main():
     if not sys_info.get_gpus_names():
         main_window.label_gpu.setText("GPUS: NO")
     else:
-        main_window.label_gpu.setText("GPUS:\n" + "\n".join(sys_info.get_gpus_names()))
+        gpus = sys_info.get_gpus_names()
+        if len(gpus) > 1:  # 2
+            main_window.label_gpu.setMinimumSize(QtCore.QSize(0, 52))
+        if len(gpus) > 2:  # > 2
+            main_window.label_gpu.setMinimumSize(QtCore.QSize(0, 128))
+
+        main_window.label_gpu.setText("GPUS:\n" + "\n".join(gpus))
     main_window.label_cpu.setText("CPU:\n" + "\n".join(sys_info.get_cpus_names()))
 
     for interface in pc_info["active_ports"]:
