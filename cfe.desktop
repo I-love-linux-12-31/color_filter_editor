@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Categories=Qt;Graphics;Utility;
-Exec=/opt/color_filter_editor/run_cfe.sh
+Exec=/opt/color-filter-editor/run_cfe.sh
 Icon=display
 Terminal=false
 Type=Application

@@ -8,25 +8,25 @@ is_user_root ()
 
 if is_user_root;
 then (
-  if [ -d "/opt/color_filter_editor" ]; then (
+  if [ -d "/opt/color-filter-editor" ]; then (
       echo "removing previous installation...";
-      rm -rf "/opt/color_filter_editor";
+      rm -rf "/opt/color-filter-editor";
       )
   fi
 
-  mkdir /opt/color_filter_editor
-  mkdir /opt/color_filter_editor/cfe
-  cp ./cfe /opt/color_filter_editor -r
-  cp ./run_cfe.sh /opt/color_filter_editor
-  cp ./LICENSE.md /opt/color_filter_editor
-  cp ./README.md /opt/color_filter_editor
+  mkdir /opt/color-filter-editor
+  mkdir /opt/color-filter-editor/cfe
+  cp ./cfe /opt/color-filter-editor -r
+  cp ./run_cfe.sh /opt/color-filter-editor
+  cp ./LICENSE.md /opt/color-filter-editor
+  cp ./README.md /opt/color-filter-editor
 
   cp ./cfe.desktop /usr/local/share/applications/
   chmod 755 /usr/local/share/applications/cfe.desktop
-  chmod 755 /opt/color_filter_editor
-  chmod 755 /opt/color_filter_editor/run_cfe.sh
-  chmod 755 /opt/color_filter_editor/cfe
-  chmod 755 /opt/color_filter_editor/cfe/*
+  chmod 755 /opt/color-filter-editor
+  chmod 755 /opt/color-filter-editor/run_cfe.sh
+  chmod 755 /opt/color-filter-editor/cfe
+  chmod 755 /opt/color-filter-editor/cfe/*
 
   echo -e "\033[32mdone\033[0m!"
 )
