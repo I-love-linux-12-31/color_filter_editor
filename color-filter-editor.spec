@@ -50,5 +50,9 @@ chmod 755 /opt/%{name}/cfe
 chmod 755 /opt/%{name}/cfe/*
 
 %changelog
+* Sun Jun 29 2025 Yaroslav Kuznetsov <yaroslav.12.31.dev@gmail.com>  - 1.3.0
+- Some technical improvements
+- Added load/save configuration for functionality
+
 * Wed Oct 23 2024 Yaroslav Kuznetsov <yaroslav.12.31.dev@gmail.com>  - 1.2.6
 - Initial RPM release
