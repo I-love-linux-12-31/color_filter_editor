@@ -1,7 +1,7 @@
 %define _topdir %(pwd)/rpmbuild
 %define debug_package %{nil}
 Name:           color-filter-editor
-Version:        1.2.6
+Version:        1.3.0
 Release:        1%{?dist}
 Summary:        Color Filter Editor GUI Application
 
