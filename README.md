@@ -1,12 +1,13 @@
 # A simple program for setting up color correction in X11
 
-[RU] README_RU.md<br>
-[EN] README.md
+[README на русском (RU)](https://github.com/I-love-linux-12-31/color_filter_editor/blob/master/README_RU.md)
+
 
 This program allows to change the brightness of the display and the intensity of individual colors
 in systems with the X11 graphics server for each video output separately.
 
-### ! Wayland not supported !
+> [!WARNING]
+> Wayland not supported
 
 Source code repos:
 1. https://bitbucket.org/i-love-linux-12-31/colorfiltereditor/

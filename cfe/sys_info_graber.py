@@ -1,4 +1,3 @@
-import os
 import subprocess
 import sys
 
@@ -7,7 +6,7 @@ import psutil
 
 def get_gpus_names() -> []:
     result = subprocess.run(
-        ["lspci", ], capture_output=True, text=True
+        ["lspci"], capture_output=True, text=True,
     )
     if bool(result.stderr):
         print("[Err] (get pc info): Subprocess end with errors")
@@ -19,7 +18,7 @@ def get_gpus_names() -> []:
 
 def get_cpus_names() -> []:
     result = subprocess.run(
-        ["cat", "/proc/cpuinfo"], capture_output=True, text=True
+        ["cat", "/proc/cpuinfo"], capture_output=True, text=True,
     )
     if bool(result.stderr):
         print("[Err] (get pc info): Subprocess end with errors")
@@ -42,7 +41,7 @@ def get_system_info():
     if sys.platform != "linux":
         return sys.platform
     result = subprocess.run(
-        ["cat", "/proc/version"], capture_output=True, text=True
+        ["cat", "/proc/version"], capture_output=True, text=True,
     )
     if bool(result.stderr):
         print("[Err] (get pc info): Subprocess end with errors")

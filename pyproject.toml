@@ -1,0 +1,14 @@
+[tool.ruff]
+exclude = [
+    ".venv",
+    "venv",
+    "rpmbuild"
+]
+
+line-length = 121
+
+# select = ["ALL"]
+lint.select = ["W", "E", "Q", "COM", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+"cfe/main.py" = ["E402"]

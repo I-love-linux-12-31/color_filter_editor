@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.2.6"
+VERSION="1.3.0"
 SOURCES_ARH="color-filter-editor-$VERSION.tar.gz"
 
 sed -i "s/^Version:.*$/Version:        $VERSION/" color-filter-editor.spec

@@ -1,5 +1,3 @@
-import sys
-import os
 import subprocess
 
 
@@ -12,7 +10,7 @@ __inited = False
 
 def __update_devices():
     result = subprocess.run(
-        ["xrandr", "--listproviders"], capture_output=True, text=True
+        ["xrandr", "--listproviders"], capture_output=True, text=True,
     )
     if bool(result.stderr):
         print("[Err] (get pc info): Subprocess end with errors")
@@ -34,7 +32,7 @@ def __update_devices():
 
 def __update_displays():
     result = subprocess.run(
-        ["xrandr", ], capture_output=True, text=True
+        ["xrandr"], capture_output=True, text=True,
     )
     if bool(result.stderr):
         print("[Err] (get pc info): Subprocess end with errors")
@@ -77,7 +75,7 @@ def __update_displays():
 
 def __get_info():
     result = subprocess.run(
-        ["xrandr", "--listproviders"], capture_output=True, text=True
+        ["xrandr", "--listproviders"], capture_output=True, text=True,
     )
     if bool(result.stderr):
         print("[Err] (get pc info): Subprocess end with errors")
@@ -108,6 +106,6 @@ def get_pc_info() -> dict:
     raise RuntimeError("Module not inited")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     init()
     print(get_pc_info())
