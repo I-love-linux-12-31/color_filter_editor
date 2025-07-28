@@ -1,10 +1,11 @@
 from dependencies_checker import check_dependencies
-from PyQt6 import QtCore
 
 check_dependencies()
 
 import sys
-from PyQt6.QtWidgets import QWidget, QLabel, QApplication
+
+from PyQt6 import QtCore
+from PyQt6.QtWidgets import QApplication
 
 from windows import MainWindow, MonitorConfigWidget
 
@@ -46,5 +47,5 @@ def main():
     sys.exit(app.exec())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
