@@ -1,11 +1,11 @@
 from PyQt6.QtWidgets import QWidget, QMainWindow, QMessageBox
 
 from core import load_from_config, save_to_file, apply_config
-from main_ui import *
+from main_ui import *  # noqa: F403
 from monitor_widget_ui import Ui_Form as MonitorConfigWidgetUI
 
 
-class MainWindow(QMainWindow, Ui_MainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):  # noqa: F405
     pass
 
 
@@ -37,7 +37,7 @@ class MonitorConfigWidget(QWidget, MonitorConfigWidgetUI):
         if sum(gamma) / 3 < 0.3 or sum(gamma) / 3 > 1.6 or brightness < 0.2:
             if QMessageBox.warning(
                     None, "Are you sure?", "Are you sure?",
-                    QMessageBox.StandardButton.Cancel | QMessageBox.StandardButton.Ok
+                    QMessageBox.StandardButton.Cancel | QMessageBox.StandardButton.Ok,
             ) == QMessageBox.StandardButton.Cancel:
                 print("Canceled.")
                 return

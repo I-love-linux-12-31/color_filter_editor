@@ -1,5 +1,4 @@
 import os
-import shutil
 import json
 
 INTERFACES_CONFIG_PATH = os.path.expanduser("~/.config/color_filter_editor/interfaces_config.json")
@@ -26,7 +25,8 @@ def apply_config(
               f" --gamma {':'.join(map(str, gamma))}" \
               f" --brightness {brightness}" \
               f" --rate {freq}"
-    if show_cmd: print(command)
+    if show_cmd:
+        print(command)
     os.system(command)
 
 def save_to_file(**params):
