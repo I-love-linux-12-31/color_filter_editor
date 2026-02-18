@@ -1,7 +1,7 @@
 %define _topdir %(pwd)/rpmbuild
 %define debug_package %{nil}
 Name:           color-filter-editor
-Version:        1.3.0
+Version:        1.3.2
 Release:        1%{?dist}
 Summary:        Color Filter Editor GUI Application
 
@@ -50,6 +50,10 @@ chmod 755 /opt/%{name}/cfe
 chmod 755 /opt/%{name}/cfe/*
 
 %changelog
+* Wed Feb 18 2026 Yaroslav Kuznetsov <yaroslav.12.31.dev@gmail.com>  - 1.3.2
+- Fixed crash with Nvidia TESLA GPU's
+- Updated info about GPUS
+
 * Sun Jun 29 2025 Yaroslav Kuznetsov <yaroslav.12.31.dev@gmail.com>  - 1.3.0
 - Some technical improvements
 - Added load/save configuration for functionality

@@ -1,6 +1,5 @@
+import re
 import subprocess
-
-
 from string import punctuation
 
 
@@ -21,11 +20,22 @@ def __update_devices():
     for i in range(devices_count):
         device = dict()
         line_raw = lines[1 + i].strip()
-        line = line_raw.split()
-        device["id"] = int(line[1][:-1])
-        device["outputs_count"] = line[17]
-        name = line_raw[line_raw.find("name") + 5:line_raw.rfind("@") - 1]
-        device["name"] = name.strip()
+        id_match = re.search(r"id:\s*(0x[0-9a-fA-F]+|\d+)", line_raw)
+        device["id"] = int(id_match.group(1), 16) if id_match else None
+        outputs_match = re.search(r"outputs:\s*(\d+)", line_raw)
+        device["outputs_count"] = int(outputs_match.group(1)) if outputs_match else 0
+
+        cap_labels_str = line_raw[line_raw.find("cap") + 4:line_raw.find("crtcs")].strip().strip(",")
+        device["capabilities"] = (
+            [c.strip() for c in cap_labels_str.split(",") if c.strip()]
+            if cap_labels_str else []
+        )
+
+        name_match = re.search(r"name:(.+?)(?:\s*@\s*pci:[^\s]+)?$", line_raw)
+        if name_match:
+            device["name"] = name_match.group(1).strip()
+        else:
+            device["name"] = None
         devices.append(device)
     pc_info["devices"] = devices
 
